@@ -6,9 +6,12 @@
 package sentencegenerator;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.io.StreamTokenizer;
+import java.io.UnsupportedEncodingException;
 import java.util.Hashtable;
 import java.util.Random;
 import java.util.Scanner;
@@ -38,6 +41,18 @@ public class Chain {
          }
          add(NONWORD);
      } 
+    
+//     void build(InputStream in) throws IOException
+//    {
+//        StreamTokenizer st = new StreamTokenizer(in);
+//
+//        st.resetSyntax(); // remove default rules
+//        st.wordChars(0, Character.MAX_VALUE); // turn on all chars
+//        st.whitespaceChars(0, ' '); // except up to blank
+//        while (st.nextToken() != st.TT_EOF)
+//            add(st.sval);
+//        add(NONWORD);
+//    }
     // Chain add: add word to suffix list, update prefix
     void add(String word)
     {
@@ -51,11 +66,13 @@ public class Chain {
         prefix.pref.addElement(word);
     }
     // Chain generate: generate output words
-    void generate(int nwords)
+    void generate(int nwords) throws FileNotFoundException, UnsupportedEncodingException
     {
         prefix = new Prefix(NPREF, NONWORD);
         for (int i = 0; i < nwords; i++) {
             Vector s = (Vector) statetab.get(prefix);
+
+            //System.out.println(statetab.toString());
             if (s == null) {
             System.err.println("Markov: internal error: no state");
             System.exit(1); 
@@ -68,5 +85,8 @@ public class Chain {
             prefix.pref.removeElementAt(0);
             prefix.pref.addElement(suf);
         }
+            PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
+            writer.println(statetab.toString());
+            writer.close();
     }
 } 
