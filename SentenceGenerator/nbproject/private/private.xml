@@ -5,7 +5,10 @@
         <group>
             <file>file:/C:/Users/DeiNerd/Dropbox/GitHub/MarkovSentenceGenerator-master/SentenceGenerator/src/sentencegenerator/Markov.java</file>
             <file>file:/C:/Users/DeiNerd/Dropbox/GitHub/MarkovSentenceGenerator-master/SentenceGenerator/src/sentencegenerator/Chain.java</file>
+<<<<<<< HEAD
             <file>file:/C:/Users/DeiNerd/Dropbox/GitHub/MarkovSentenceGenerator-master/SentenceGenerator/src/sentencegenerator/alice.txt</file>
+=======
+>>>>>>> master
             <file>file:/C:/Users/DeiNerd/Dropbox/GitHub/MarkovSentenceGenerator-master/SentenceGenerator/src/sentencegenerator/text.txt</file>
             <file>file:/C:/Users/DeiNerd/Dropbox/GitHub/MarkovSentenceGenerator-master/SentenceGenerator/src/sentencegenerator/Prefix.java</file>
         </group>

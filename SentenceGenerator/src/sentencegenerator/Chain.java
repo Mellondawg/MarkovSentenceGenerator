@@ -41,6 +41,7 @@ public class Chain {
          }
          add(NONWORD);
      } 
+
     
 //     void build(InputStream in) throws IOException
 //    {
@@ -53,6 +54,7 @@ public class Chain {
 //            add(st.sval);
 //        add(NONWORD);
 //    }
+
     // Chain add: add word to suffix list, update prefix
     void add(String word)
     {
@@ -67,12 +69,12 @@ public class Chain {
     }
     // Chain generate: generate output words
     void generate(int nwords) throws FileNotFoundException, UnsupportedEncodingException
+
     {
         prefix = new Prefix(NPREF, NONWORD);
         for (int i = 0; i < nwords; i++) {
             Vector s = (Vector) statetab.get(prefix);
 
-            //System.out.println(statetab.toString());
             if (s == null) {
             System.err.println("Markov: internal error: no state");
             System.exit(1); 
@@ -85,8 +87,10 @@ public class Chain {
             prefix.pref.removeElementAt(0);
             prefix.pref.addElement(suf);
         }
+
             PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
             writer.println(statetab.toString());
             writer.close();
+
     }
 } 
