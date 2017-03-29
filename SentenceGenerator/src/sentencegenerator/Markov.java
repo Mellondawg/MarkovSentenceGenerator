@@ -18,7 +18,9 @@ public class Markov {
     {
         Chain chain = new Chain();
         int nwords = MAXGEN;
-        chain.build("C:\\Users\\DeiNerd\\Dropbox\\GitHub\\MarkovSentenceGenerator-master\\SentenceGenerator\\src\\sentencegenerator\\text.txt");
-        chain.generate(40);
+
+        chain.build("C:\\Users\\DeiNerd\\Dropbox\\GitHub\\MarkovSentenceGenerator-master\\SentenceGenerator\\src\\sentencegenerator\\alice.txt");
+        chain.generate(nwords);
+
     }
 }
