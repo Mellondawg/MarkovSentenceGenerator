@@ -14,7 +14,7 @@ Stage 3 By 4/1
 - [ ] Output state table in Human readable format - Deji
 - [ ] Create code to parse through state table and display the probabilities in a simple way - Deji
 - [ ] Improve driver - John
-- [ ] Create several test case txt files - John
+- [x] Create several test case txt files - John
 
 Stage 4
 - [ ] Create code that will allow user to input a word and a number X, and the code will return either the next X words, or X words starting with the provided word - Tony
